@@ -5,7 +5,7 @@
 * Get a brand spanking new slice / host (Debian or Ubuntu please, other apt-based sytems might work too)
 * Install sudo if you are on Debian
 * Create yourself a user (use `adduser`), add yourself to the /etc/sudoers file
-* Set your host url|ip address and some fields with databae in settings.yml (settings.yml.example provided)
+* Set your host url|ip address and some fields with database in assets/settings.yml (settings.yml.example provided)
 
 From your local system (from the passenger-stack directory), run:
 
@@ -16,14 +16,14 @@ Go forth and install your custom configurations, add vhosts and other VPS paraph
 
 ## Wait, what does all this install?
 
-* Nginx (Source)
 * Ruby 1.9.2-p290 (Source) [includes rubygems]
+* Nginx (APT)
 * Passenger (Rubygem)
-* MySQL (Apt)
-* MySQL ruby database drivers (Rubygem)
-* Git (Apt)
+* MySQL (APT) [includes client gem]
+* Git (APT)
 
 ## Requirements
+
 * Ruby
 * Capistrano
 * Sprinkle (github.com/crafterm/sprinkle)

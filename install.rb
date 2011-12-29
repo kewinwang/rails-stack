@@ -5,23 +5,15 @@ Dir[File.join(File.expand_path(File.dirname(__FILE__)), 'recipes', '*.rb')].each
   require package
 end
 
-# require 'recipes/rails'
-
-# $settings = YAML.load_file(File.join(File.dirname(__FILE__), "/settings.yml"))
+$settings = YAML.load_file(File.join(File.dirname(__FILE__), "assets", "settings.yml"))
 
 # What we're installing to your server Take what you want, leave what you don't
 # Build up your own and strip down your server until you get it right. 
 policy :stack, :roles => :app do
-  $settings = YAML.load_file(File.join(File.dirname(__FILE__), "..", "/settings.yml"))
   requires :init
-  # requires :ruby
-  # requires :nginx
-  # requires :mysql
-  
-  # requires :web_server              # Nginx
-  # requires :app_server              # Passenger
-  # requires :ruby                    # Ruby 1.9.2-p290
-  # requires :database                # MySQL with ruby client gem for it
+  requires :ruby           # Ruby 1.9.2-p290                             
+  requires :nginx          # Nginx + Passenger                         
+  requires :mysql          # MySQL with ruby client gem for it
 end
 
 deployment do
@@ -36,9 +28,9 @@ deployment do
  
   # source based package installer defaults
   source do
-    prefix   $settings['install']['prefix']
-    archives $settings['install']['archives']
-    builds   $settings['install']['builds']
+    prefix    $settings['install']['prefix']
+    archives  $settings['install']['archives']
+    builds    $settings['install']['builds']
   end
 end
 

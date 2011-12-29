@@ -1,9 +1,9 @@
 # MySQL
 package :mysql, :provides => :database do
   description "MySQL Database"
-  $settings = YAML.load_file(File.join(File.dirname(__FILE__), "..", "/settings.yml"))
+  $settings = YAML.load_file(File.join(File.dirname(__FILE__), "../assets", "settings.yml"))
   
-  apt %w( mysql-server mysql-client libmysqlclient-dev ) do
+  apt %w( mysql-server mysql-client mysql-common libmysqlclient16 libmysqlclient-dev ) do
     USER_NAME     = $settings['database']['user']
     USER_PASSWORD = $settings['database']['password']
     ROOT_PASSWORD = $settings['database']['root_password']
