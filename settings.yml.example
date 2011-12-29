@@ -1,0 +1,14 @@
+#
+install:
+  host: 'target server name or ip'
+  user: 'somebody'
+  password: 'password of somebody'
+  # 
+  prefix:   '/usr/local'
+  archives: '/usr/local/sources'
+  builds:   '/usr/local/build'
+# 
+database:
+  user: 'default user'
+  password: 'the password for default user'
+  root_password: 'the password for db root user'
