@@ -19,7 +19,7 @@ Go forth and install your custom configurations, add vhosts and other VPS paraph
 * Ruby 1.9.2-p290 (Source) [includes rubygems]
 * Nginx (APT)
 * Passenger (Rubygem)
-* MySQL (APT) [includes client gem]
+* MySQL (APT)
 * Git (APT)
 
 ## Requirements

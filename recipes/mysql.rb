@@ -16,16 +16,4 @@ package :mysql, :provides => :database do
   verify {
     has_executable 'mysql'
   }
-  requires :mysql_driver
-end
- 
-package :mysql_driver do
-  description 'Ruby MySQL database driver'
-  gem 'mysql2'
-  
-  verify do
-    has_gem 'mysql2'
-  end
-  
-  requires :ruby
 end
